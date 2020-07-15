@@ -137,8 +137,20 @@ function trenne() {
    //    console.log('test');
    let txt1 = document.getElementById('txt1').value;
    let txt2 = document.getElementById('txt2').value;
-   let fillFirst = (document.getElementById('result1').innerHTML = txt1);
-   let fillLast = (document.getElementById('result2').innerHTML = txt2);
-   let fillFirstRemove = fillFirst.pop();
-   console.log(fillFirstRemove);
+   let davorTrennen = document.getElementById('davorTrennen');
+   let danachTrennen = document.getElementById('danachTrennen');
+   let result1 = document.getElementById('result1');
+   let result2 = document.getElementById('result2');
+   let position = txt1.indexOf(txt2);
+   console.log(position);
+   if (danachTrennen.checked) {
+      result2.innerHTML = txt1.slice(
+         txt1.indexOf(document.getElementById('txt2').value)
+      );
+   } else {
+      result1.innerHTML = txt1.slice(
+         0,
+         txt1.indexOf(document.getElementById('txt2').value)
+      );
+   }
 }
